@@ -1,0 +1,7 @@
+<ul>
+TEST
+{{ album_detail.song }}
+    {% for song in album_detail_set.all %}
+        <li>{{ song.album_title }}</li>
+    {% endfor %}
+</ul>

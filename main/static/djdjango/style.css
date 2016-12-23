@@ -1,0 +1,15 @@
+body{
+    background: url('images/background.jpg') no-repeat;
+    background-size: 100%;
+    font-family: 'Courgette', cursive;
+    padding-left: 15px;
+}
+
+.navbar{
+    border-radius: 0;
+}
+
+.navbar-brand{
+    font-family:'Satisfy',cursive ;
+}
+
