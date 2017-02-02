@@ -1,6 +1,10 @@
 body{
-    background: url('images/background.jpg') no-repeat;
-    background-size: 100%;
+
+    background: url(images/background.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     font-family: 'Courgette', cursive;
 }
 
@@ -18,7 +22,7 @@ body{
         bottom:0px;
         height:30px;
         width:100%;
-        background:#101010;
+        background:#ffffff;
     }
 
   .carousel-inner img {

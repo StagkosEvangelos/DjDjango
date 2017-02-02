@@ -1,0 +1,30 @@
+{% extends 'djdjango/base.html' %}
+
+{% block content %}
+<div class="container-fluid songs-container">
+        <div class="row">
+
+
+                {% for artist in artist_album %}
+                    <div class="col-md-4">
+
+                        <div class="thumbnail">
+
+                            <img src="{{ artist.album_logo }}" class="img-responsive" style="width:200px;height:200px;">
+                                <div class="caption">
+                                        <h2>{{ artist.album_title }}</h2>
+                                        <h2>{{ artist.artist }}</h2>
+                                        <div class="text-right">
+                                           <a href="{% url 'detail' artist.pk %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+                                        </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

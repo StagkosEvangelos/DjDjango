@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-]
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -121,3 +121,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT= os.path.join(BASE_DIR, 'static')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT= os.path.join(BASE_DIR, "media")
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'vsnake'
+EMAIL_HOST_PASSWORD = 'Snake88lol'
+EMAIL_PORT = 587
+
+
+ADMINS = (
+    ('Vaggelis', 'eyagstag@gmail.com'),   # email will be sent to your_email
+)
+
+MANAGERS = ADMINS
+
+

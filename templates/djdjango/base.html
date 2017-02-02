@@ -5,7 +5,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'djdjango/style.css' %}">
     <meta charset="UTF-8">
-    <title>Title</title>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -31,6 +30,23 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+       <!-- Add the script to the HEAD of your document -->
+    <SCRIPT LANGUAGE="JavaScript">
+    <!-- Begin
+    var scrl = " DjDjango|The online music Library! <3 ";
+    function scrlsts() {
+     scrl = scrl.substring(1, scrl.length) + scrl.substring(0, 1);
+     document.title = scrl;
+     setTimeout("scrlsts()", 300);
+     }
+    //  End -->
+    </script>
+
+
+<!-- Add the event loader to the body tag as below -->
+
+<body onLoad="scrlsts()">
+
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -41,28 +57,28 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{% url 'home' %}">DJDjango</a>
+      <a class="navbar-brand" href="{% url 'home' %}"><img src="https://s23.postimg.org/bk672hkkr/Beats_Music_Logo.png" alt="Image"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="{% url 'album_list' %}">Albums</a></li>
-        <li><a href="#">Artist</a></li>
+        <li><a href="{% url 'artist_list' %}">Artist</a></li>
         <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">Genre
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                <li><a href="#">Rock</a></li>
-                <li><a href="#">Metal</a></li>
-                <li><a href="#">Punk</a></li>
-                <li><a href="#">Swing</a></li>
-                <li><a href="#">Pop</a></li>
-                <li><a href="#">Electro</a></li>
+                <li><a href="{% url 'rock' %}">Rock</a></li>
+                <li><a href="{% url 'metal' %}">Metal</a></li>
+                <li><a href="{% url 'punk' %}">Punk</a></li>
+                <li><a href="{% url 'swing' %}">Swing</a></li>
+                <li><a href="{% url 'pop' %}">Pop</a></li>
+                <li><a href="{% url 'electro' %}">Electro</a></li>
             </ul>
         </li>
         <li><a href="{% url 'contact' %}">Contact</a></li>
-        <form class="navbar-form navbar-left">
+        <form class="navbar-form navbar-left" method="get" action="/albums">
             <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" name="q" class="form-control" placeholder="Search">
         </div>
             <button type="submit" class="btn btn-default">Submit</button>
       </form>
@@ -77,7 +93,7 @@
 {% endblock %}
 
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+    <p><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Άδεια Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /></a><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"></a> <small>© Copyright <a href="mailto:nikol30992@hotmail.com" target="_top">Agisilaou Alexandra Nikoleta</a> | <a href="mailto:eyagstag@gmail.com" target="_top">Stagkos Vaggelis</a></small></p>
 </footer>
 </body>
 </html>

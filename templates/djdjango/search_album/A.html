@@ -5,7 +5,7 @@
     <div class="container" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
   <div class="btn-toolbar">
     <div class="btn-group btn-group-sm">
-        <a href="{% url 'A_search' %}" class="btn btn-default">A</a>
+       <a href="{% url 'A_search' %}" class="btn btn-default">A</a>
         <a href="{% url 'B_search' %}" class="btn btn-default">B</a>
         <a href="{% url 'C_search' %}" class="btn btn-default">C</a>
         <a href="{% url 'D_search' %}" class="btn btn-default">D</a>
@@ -31,7 +31,6 @@
         <a href="{% url 'X_search' %}" class="btn btn-default">X</a>
         <a href="{% url 'Y_search' %}" class="btn btn-default">Y</a>
         <a href="{% url 'Z_search' %}" class="btn btn-default">Z</a>
-
     </div>
   </div>
 </div>
@@ -41,20 +40,28 @@
 
 <div class="container-fluid songs-container">
         <div class="row">
-            {% for album in albums %}
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img src="{{ album.album_logo }}" class="img-responsive" style="width:200px;height:200px;">
-                            <div class="caption">
-                                <h2>{{ album.album_title }}</h2>
-                                <h2>{{ album.artist }}</h2>
-                                <div class="text-right">
-                                    <a href="{% url 'detail' album.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+
+
+                {% for album in A_search %}
+                    <div class="col-md-4">
+
+                        <div class="thumbnail">
+
+                            <img src="{{ album.album_logo }}" class="img-responsive" style="width:200px;height:200px;">
+                                <div class="caption">
+                                        <h2>{{ album.album_title }}</h2>
+                                        <h2>{{ album.artist }}</h2>
+                                        <div class="text-right">
+                                           <a href="{% url 'detail' album.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+                                        </div>
+
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                    </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
+
         </div>
-</div>
+    </div>
+
 {% endblock %}

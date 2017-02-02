@@ -31,7 +31,6 @@
         <a href="{% url 'X_search' %}" class="btn btn-default">X</a>
         <a href="{% url 'Y_search' %}" class="btn btn-default">Y</a>
         <a href="{% url 'Z_search' %}" class="btn btn-default">Z</a>
-
     </div>
   </div>
 </div>
@@ -41,20 +40,28 @@
 
 <div class="container-fluid songs-container">
         <div class="row">
-            {% for album in albums %}
-                <div class="col-md-4">
-                    <div class="thumbnail">
-                        <img src="{{ album.album_logo }}" class="img-responsive" style="width:200px;height:200px;">
-                            <div class="caption">
-                                <h2>{{ album.album_title }}</h2>
-                                <h2>{{ album.artist }}</h2>
-                                <div class="text-right">
-                                    <a href="{% url 'detail' album.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+
+
+                {% for album in H_search %}
+                    <div class="col-md-4">
+
+                        <div class="thumbnail">
+
+                            <img src="{{ album.album_logo }}" class="img-responsive" style="width:200px;height:200px;">
+                                <div class="caption">
+                                        <h2>{{ album.album_title }}</h2>
+                                        <h2>{{ album.artist }}</h2>
+                                        <div class="text-right">
+                                           <a href="{% url 'detail' album.id %}" class="btn btn-primary btn-sm" role="button">View Details</a>
+                                        </div>
+
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                    </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
+
         </div>
-</div>
+    </div>
+
 {% endblock %}
